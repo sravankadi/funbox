@@ -19,7 +19,7 @@ public class UserDaoImpl implements UserDao{
  public UserDaoImpl(){
 	 System.out.println("UserDaoImpl is instantiated..");
  }
-public void registration(User user) {
+public void registerUser(User user) {
 	Session session=sessionFactory.getCurrentSession();
 	session.save(user);
 	
