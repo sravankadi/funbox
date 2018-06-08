@@ -1,0 +1,23 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.text</groupId>
+  <artifactId>funboxMiddleware</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>funboxMiddleware Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  <dependencies>
+  
+  
+  <dependency>
+    <groupId>com.text</groupId>
+  <artifactId>funbox</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+    </dependency>
+  
+  </dependencies>
+  <build>
+    <finalName>funboxMiddleware</finalName>
+  </build>
+</project>
