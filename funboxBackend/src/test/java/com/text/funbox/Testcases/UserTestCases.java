@@ -11,7 +11,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import com.text.Dao.UserDao;
 import com.text.model.User;
 
-public class MyTestCases {
+public class UserTestCases {
 
 	@Autowired
 	static AnnotationConfigApplicationContext context;

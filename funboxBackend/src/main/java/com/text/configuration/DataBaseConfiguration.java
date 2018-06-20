@@ -3,6 +3,7 @@ package com.text.configuration;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.text.model.Job;
 import com.text.model.User;
 
 import org.springframework.context.annotation.Configuration;
@@ -23,7 +24,7 @@ import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 @EnableTransactionManagement
 public class DataBaseConfiguration {
 	public DataBaseConfiguration() {
-		System.out.println("DBCOnfiguration class instantiated");
+		System.out.println("DataBaseCOnfiguration class instantiated");
 	}
 
 	@Bean
@@ -36,7 +37,7 @@ public class DataBaseConfiguration {
 		hibernateProperties.setProperty("hibernate.format_sql", "true");
 	
 		lsf.addProperties(hibernateProperties);
-		Class classes[] = new Class[] { User.class };
+		Class classes[] = new Class[] { User.class,Job.class };
 		return lsf.addAnnotatedClasses(classes).buildSessionFactory();
 	}
 

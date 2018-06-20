@@ -19,6 +19,19 @@ app.config(function($routeProvider){
 		controller:'UserCtrl',
 		templateUrl:'views/updateprofile.html' //user object in updateprofile.html
 	})
+	.when('/addjob',{ //V to C
+		controller:'JobCtrl',
+		templateUrl:'views/jobform.html'
+	})
+	.when('/activejobs',{ //C to V,  $scope.activeJobs=[{},{}]
+		controller:'JobCtrl',
+		templateUrl:'views/activejobslist.html'
+	})
+	.when('/inactivejobs',{
+		controller:'JobCtrl',
+		templateUrl:'views/inactivejobslist.html'
+	})
+	
 	.otherwise({
 		templateUrl:'views/home.html'
 	})
