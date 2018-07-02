@@ -1,0 +1,18 @@
+{{error.message}}
+<div ng-show="loggedInUser.role=='ADMIN'">
+<div class="panel panel-info">
+<div class="panel-heading"><h3>List of Blogs Waiting For Approval</h3>
+</div>
+<div class="panel-body">
+			<ul style="list-style:none;">
+			<li ng-repeat="blog in blogsWaitingForApproval">
+			<a href="#/getblogwaitingforapproval/{{blog.id}}">Blog Title:</b>{{blog.blogTitle}}<br></a>
+			<b>PostedOn:</b>{{blog.postedOn | date:'medium'}}<br> 
+			<b>PostedBy:</b>{{blog.postedBy.firstname}}&nbsp; {{blog.postedBy.lastname}}<br>
+			<hr>
+			</li>
+			</ul>
+				
+		</div>
+	</div>
+</div>

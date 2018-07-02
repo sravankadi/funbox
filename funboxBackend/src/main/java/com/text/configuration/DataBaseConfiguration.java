@@ -3,6 +3,8 @@ package com.text.configuration;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.text.model.BlogPost;
+import com.text.model.BlogPostLikes;
 import com.text.model.Job;
 import com.text.model.User;
 
@@ -37,7 +39,7 @@ public class DataBaseConfiguration {
 		hibernateProperties.setProperty("hibernate.format_sql", "true");
 	
 		lsf.addProperties(hibernateProperties);
-		Class classes[] = new Class[] { User.class,Job.class };
+		Class classes[] = new Class[] { User.class,Job.class,BlogPost.class,BlogPostLikes.class };
 		return lsf.addAnnotatedClasses(classes).buildSessionFactory();
 	}
 

@@ -31,7 +31,27 @@ app.config(function($routeProvider){
 		controller:'JobCtrl',
 		templateUrl:'views/inactivejobslist.html'
 	})
-	
+	.when('/addblog',{
+		controller:'BlogCtrl',
+		templateUrl:'views/blogform.html'
+	})
+	.when('/blogsapproved',{
+		controller:'BlogCtrl',
+		templateUrl:'views/blogsapproved.html' 
+	})
+	.when('/blogswaitingforapproval',{
+		controller:'BlogCtrl',
+		templateUrl:'views/blogswaitingforapproval.html' 
+	})
+	.when('/getblogapproved/:id',{
+		controller:'BlogInDetailCtrl',
+		templateUrl:'views/blogindetail.html' 
+	})
+	.when('/getblogwaitingforapproval/:id',{
+		controller:'BlogInDetailCtrl',
+		templateUrl:'views/blogapprovalform.html' 
+	})
+
 	.otherwise({
 		templateUrl:'views/home.html'
 	})
@@ -52,4 +72,3 @@ app.run(function($rootScope,$cookieStore,UserService,$location){
 		})
 	}	
 })
-
