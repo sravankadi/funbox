@@ -6,19 +6,19 @@ app.factory('UserService',function($http){
 	var userService={}
 	
 	userService.register=function(user){
-		return $http.post("http://localhost:9090/funboxMiddleware/register",user)
+		return $http.post("http://localhost:9020/funboxMiddleware/register",user)
 	}
 	
 	userService.login=function(user){
-		return $http.post("http://localhost:9090/funboxMiddleware/login",user)
+		return $http.post("http://localhost:9020/funboxMiddleware/login",user)
 	}
 	
 	userService.logout=function(){
-		return $http.put("http://localhost:9090/funboxMiddleware/logout")
+		return $http.put("http://localhost:9020/funboxMiddleware/logout")
 	}
      
 	userService.updateProfile=function(user){//updated user profile
-		return $http.put("http://localhost:9090/funboxMiddleware/update",user)
+		return $http.put("http://localhost:9020/funboxMiddleware/update",user)
 	}
 	
 	return userService;
