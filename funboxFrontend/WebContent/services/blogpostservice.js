@@ -27,6 +27,12 @@ app.factory('BlogService',function($http){
 	blogService.updateBlogPostLikes=function(blogPostId){
 		return $http.put("http://localhost:9020/funboxMiddleware/updateblogpostlikes/"+blogPostId)
 	}
+	blogService.addComment=function(commentTxt,id){
+		return $http.post("http://localhost:9020/funboxMiddleware/addcomment/"+commentTxt+"/"+id)
+	}
+	blogService.getAllBlogComments=function(blogPostId){
+		return $http.get("http://localhost:9020/funboxMiddleware/getblogcomments/"+blogPostId)
+	}
 
 	return blogService;
 }) 

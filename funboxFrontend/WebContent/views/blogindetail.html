@@ -14,3 +14,9 @@
 <a ng-click="updateBlogPostLikes(blogPost.id)"> <span class="glyphicon glyphicon-thumbs-up"  ng-class="isLiked?'liked':'default'"></span></a>
 {{blogPost.likes}}  likes<br>
 <div>
+<textarea rows="4" cols="20" ng-model="commentTxt"></textarea>
+<br>
+<button class="btn btn-success" ng-click="addComment()">Post Comment</button>
+<a ng-click="showComments()">Show Comments</a>
+</div>
+</div>
