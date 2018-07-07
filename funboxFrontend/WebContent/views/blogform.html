@@ -1,21 +1,24 @@
 <!DOCTYPE html>
+<link rel="stylesheet" href="http://localhost:9020/funboxFrontend/resources/css/blogpostingbg.css">
 <html>
 <head >
+<font color="WHITE"> 
 <h3 align="center">Blog Form</h3>
 </head>
+</font>
 <form>
 
 <div class="form-group">
-
+<font color="WHITE"> 
 <lable>Enter Blog Title</lable>
 <input type="text" ng-model="blog.blogTitle" class="form-control">
 </div>
 <div class="form-group">
 <lable>Enter Blog Content</lable>
-
-<textarea rows="5" cols="20" ng-model="blog.blogContent" class="form-control" class="form-control"></textarea>
+</font>
+<textarea rows="5" cols="70" ng-model="blog.blogContent" class="form-control" class="form-control"></textarea>
 </div>
 <input  type="submit" ng-click="addBlog(blog)">
-
+<button type="reset" value="Reset">Reset</button>
 
 </form>

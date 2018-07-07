@@ -33,15 +33,30 @@ app.config(function($routeProvider) {
 	}).when('/blogswaitingforapproval', {
 		controller : 'BlogCtrl',
 		templateUrl : 'views/blogswaitingforapproval.html'
-	}).when('/getblogapproved/:id', {
+	})
+	.when('/getblogapproved/:id', {
 		controller : 'BlogInDetailCtrl',
 		templateUrl : 'views/blogindetail.html'
-	}).when('/getblogwaitingforapproval/:id', {
+	})
+	.when('/getblogwaitingforapproval/:id', {
 		controller : 'BlogInDetailCtrl',
 		templateUrl : 'views/blogapprovalform.html'
 	}).when('/uploaddisplaypic', {
 		templateUrl : 'views/uploaddisplaypicture.html'
-	}).otherwise({
+	})
+	.when('/suggestedusers',{
+		controller:'FriendCtrl',
+		templateUrl:'views/friendsuggestions.html' 
+	})
+	.when('/pendingrequests',{
+		controller:'FriendCtrl',
+		templateUrl:'views/pendingrequests.html' 
+	})
+	.when('/friends',{
+		controller:'FriendCtrl',
+		templateUrl:'views/friendslist.html' 
+	})
+	.otherwise({
 		templateUrl : 'views/home.html'
 	})
 })

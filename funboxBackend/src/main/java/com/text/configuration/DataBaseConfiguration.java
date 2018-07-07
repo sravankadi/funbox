@@ -7,6 +7,7 @@ import com.text.model.BlogComment;
 import com.text.model.BlogPost;
 import com.text.model.BlogPostLikes;
 import com.text.model.DisplayPicture;
+import com.text.model.Friend;
 import com.text.model.Job;
 import com.text.model.User;
 
@@ -41,7 +42,7 @@ public class DataBaseConfiguration {
 		hibernateProperties.setProperty("hibernate.format_sql", "true");
 	
 		lsf.addProperties(hibernateProperties);
-		Class classes[] = new Class[] { User.class,Job.class,BlogPost.class,BlogPostLikes.class,BlogComment.class,DisplayPicture.class};
+		Class classes[] = new Class[] { User.class,Job.class,BlogPost.class,BlogPostLikes.class,BlogComment.class,DisplayPicture.class,Friend.class };
 		return lsf.addAnnotatedClasses(classes).buildSessionFactory();
 	}
 

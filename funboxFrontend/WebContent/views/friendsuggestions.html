@@ -1,0 +1,10 @@
+<ul style="list-style:none">
+<li ng-repeat="user in suggestedUsers">
+{{user.email}}<br> 
+{{user.firstname}} &nbsp;{{user.lastname}}<br>
+{{user.role}}<br>
+<img src="http://localhost:9020/funboxMiddleware/getimage/{{user.email}}"  height="60px" width="60px" alt="No image" ><br>
+<button class="btn btn-primary" ng-click="sendFriendRequest(user)">Add Friend</button>
+<hr>
+</li>
+</ul>

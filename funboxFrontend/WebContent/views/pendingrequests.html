@@ -1,0 +1,19 @@
+<div>
+	<div align="center" class="panel panel-default">
+		<div align="center" class="panel panel-heading">Pending Requests</div>
+		<div align="center" class="panel-body">
+		<span ng-if="pendingRequests.length==0">No Pending Requests</span>
+		<ul style="list-style:none">
+		<!-- FriendRequest is of type friend -->
+		<li ng-repeat="friendRequest in pendingRequests">
+		{{friendRequest.fromId.email}}<br>
+		{{friendRequest.fromId.firstname}}&nbsp;{{friendRequest.fromId.lastname}}<br>
+		{{friendRequest.fromId.role}}<br>
+		<img src="http://localhost:9020/funboxMiddleware/getimage/{{friendRequest.fromId.email}}" alt="No image" height="40px" width="40px"><br>
+		<button class="btn btn-success"  ng-click="updateStatus(friendRequest,'A')">Accept the request</button>
+		<button class="btn btn-warning" ng-click="updateStatus(friendRequest,'D')">Delete the request</button>
+		<hr>
+		</ul>
+		</div>
+	</div>
+</div>
