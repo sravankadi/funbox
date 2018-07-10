@@ -9,6 +9,7 @@ import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Repository;
 
 import com.text.model.Friend;
@@ -22,7 +23,7 @@ public class FriendDaoImpl implements FriendDao {
 		Session session=sessionFactory.getCurrentSession();
 	
 		SQLQuery query=session.createSQLQuery("select * from users where email in"
-				+ "(select email from users where email!=?"
+				+ "(select email from user_S123 where email!=?"
 						+ " minus "
 						+"(select toId_email from friend where fromId_email=? " 
 						+" union "
@@ -61,7 +62,7 @@ public class FriendDaoImpl implements FriendDao {
 	}
 	public List<Friend> getAllFriends(String email) {
 		Session session=sessionFactory.getCurrentSession();
-		//select toId-email from friend where fromId_email=? and status='A' -SQL
+		//select toId_email from friend where fromId_email=? and status='A'-SQL
 		//Type of toId property is User
 		Query query1=session.createQuery("select f.toId from Friend f where f.fromId.email=? and f.status=?");//HQL
 		query1.setString(0, email);
@@ -73,10 +74,9 @@ public class FriendDaoImpl implements FriendDao {
 		query2.setCharacter(1, 'A');
 		List<Friend> friendsList2=query2.list();
 		
-		friendsList2.addAll(friendsList2);
+		friendsList2.addAll(friendsList1);
+		
 		return friendsList2;
-		
-		
-		
-			}
+	}
+
 }
