@@ -1,5 +1,5 @@
 /**
- * FriendController
+ * 
  */
 app.controller('FriendCtrl',function($scope,$location,FriendService){
 	function getSuggestedUsers(){
@@ -33,12 +33,9 @@ function getPendingRequests(){
 }
 getPendingRequests()
 
-     $scope.updateStatus=function(friendRequest,updatedStatus){
-	 //char updatedStatus=[A or D]
-	  //friendRequest is friend object
-	  //friendRequest.status=A or friendRequest.status=D
+$scope.updateStatus=function(friendRequest,updatedStatus){
 	friendRequest.status=updatedStatus;
-    FriendService.updateStatus(friendRequest).then(
+FriendService.updateStatus(friendRequest).then(
 			function(response){
 		getPendingRequests()
 	},
@@ -49,16 +46,14 @@ getPendingRequests()
 	})
 	
 }
-
-       function getAllFriends(){
-    	   FriendService.getAllFriends().then(function(response){
-    		   //response.data=?
-    		   $scope.friends=response.data
-    		   },function(response){
-    		   $scope.error==response.data
-    			if(response.status==401)
-    				$location.path('/login')
-    	   })
-       }
-       getAllFriends()
- })
+function getAllFriends(){
+	FriendService.getAllFriends().then(function(response){
+		$scope.friends=response.data
+	},function(response){
+		$scope.error==response.data
+		if(response.status==401)
+			$location.path('/login')
+	})
+}
+getAllFriends()
+})

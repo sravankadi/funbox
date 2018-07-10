@@ -162,11 +162,10 @@ return new ResponseEntity<ErrorClazz>(errorClazz,HttpStatus.UNAUTHORIZED);
 		String email=(String)session.getAttribute("email");
 		if(email==null){
 		ErrorClazz errorClazz=new ErrorClazz(7,"Unauthorized access..please login");
-        return new ResponseEntity<ErrorClazz>(errorClazz,HttpStatus.UNAUTHORIZED);
+return new ResponseEntity<ErrorClazz>(errorClazz,HttpStatus.UNAUTHORIZED);
 		}
 		List<BlogComment> blogComments=blogPostDao.getAllBlogComments(blogPostId);
 		return new ResponseEntity<List<BlogComment>>(blogComments,HttpStatus.OK);
 	}
 	
-}
-
+	}

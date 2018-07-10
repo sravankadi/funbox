@@ -58,6 +58,7 @@
 			</ul></li>
 			
            <li><a href="#/uploaddisplaypic"><img src="http://localhost:9020/funboxMiddleware/getimage/{{loggedInUser.email}}" alt="Uploaddisplaypic" height="35px" width="35px"></a></li>
+           <li><a href="#/chat" ng-show="loggedInUser.firstname">chat </a></li>
            <li><a href="#/updateprofile" ng-show="loggedInUser.firstname!=undefined">Welcome {{loggedInUser.firstname}} &nbsp; {{loggedInUser.lastname}}</a></li>
            <li><a href="" ng-click="logout()" ng-show="loggedInUser.firstname!=undefined">Sign out</a></li>
            <li><a href="#/registration" ng-show="loggedInUser.firstname==undefined">Sign Up</a></li>
@@ -93,4 +94,11 @@
 <script type="text/javascript" src="controller/friendcontroller.js"></script>
 <script type="text/javascript" src="services/friendservice.js"></script>
 
+ <script type="text/javascript" src="services/chatservice.js"></script>
+<script type="text/javascript" src="controller/chatcontroller.js"></script>
+
+<script type="text/javascript" src="js/sockjs/sockjs.min.js"></script>
+	<script type="text/javascript" src="js/stomp/dist/stomp.min.js"></script>
 </html>
+
+

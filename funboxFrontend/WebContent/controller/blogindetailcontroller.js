@@ -26,7 +26,7 @@ app.controller('BlogInDetailCtrl',function($scope,$location,BlogService,$rootSco
 		if(response.status==401)
 			$location.path('/login')
 	})  
-		
+	
 	$scope.approve=function(blogPost){
 		blogPost.approved=true
 		BlogService.updateApprovalStatus(blogPost).then(function(response){
@@ -59,34 +59,31 @@ app.controller('BlogInDetailCtrl',function($scope,$location,BlogService,$rootSco
 				$location.path('/login')
 		})
 	}
-	$scope.addComment=function(){
-		BlogService.addComment($scope.commentTxt,id).then(
-				//id is the id of the blogpost
-				//commentTxt is the comment entered by the user
-				function(response){
-			getAllBlogComments()
-			$scope.commentTxt=''
-		},function(response){
-			$scope.error=response.data
-			if(response.status==401)
-				$location.path('/login')
-		})
-		
-	}
-	function getAllBlogComments(){
-		BlogService.getAllBlogComments(id).then(function(response){
-			$scope.blogComments=response.data
-		},function(response){
-			$scope.error=response.data
-			if(response.status==401)
-				$location.path('/login')
-		})
-		
-	}
-	$scope.showComments=function(){
-		$scope.showCommentsIsClicked=!$scope.showCommentsIsClicked
-	}
-getAllBlogComments()
-
-
+		$scope.addComment=function(){
+			BlogService.addComment($scope.commentTxt,id).then(
+					function(response){
+				getAllBlogComments()
+				$scope.commentTxt=''
+			},function(response){
+				$scope.error=response.data
+				if(response.status==401)
+					$location.path('/login')
+			})
+			
+		}
+		function getAllBlogComments(){
+			BlogService.getAllBlogComments(id).then(function(response){
+				$scope.blogComments=response.data
+			},function(response){
+				$scope.error=response.data
+				if(response.status==401)
+					$location.path('/login')
+			})
+			
+		}
+		$scope.showComments=function(){
+			$scope.showCommentsIsClicked=!$scope.showCommentsIsClicked
+		}
+	getAllBlogComments()
+	
 })
