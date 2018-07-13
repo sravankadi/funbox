@@ -1,0 +1,5 @@
+@CHARSET "ISO-8859-1";
+body {
+   background-image: url("http://localhost:9020/funboxFrontend/resources/images/blgapr.jpg");
+   background-color: #cccccc;
+}

@@ -23,7 +23,7 @@ public class FriendDaoImpl implements FriendDao {
 		Session session=sessionFactory.getCurrentSession();
 	
 		SQLQuery query=session.createSQLQuery("select * from users where email in"
-				+ "(select email from user_S123 where email!=?"
+				+ "(select email from users where email!=?"
 						+ " minus "
 						+"(select toId_email from friend where fromId_email=? " 
 						+" union "

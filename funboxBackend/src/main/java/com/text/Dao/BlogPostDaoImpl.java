@@ -55,6 +55,7 @@ Session session=sessionFactory.getCurrentSession();
 			
 		}
 	}
+
 	public void addBlogComment(BlogComment blogComment) {
 		Session session=sessionFactory.getCurrentSession();
 		session.save(blogComment);
@@ -68,5 +69,4 @@ Session session=sessionFactory.getCurrentSession();
 		return  query.list();
 	}
 
-	
 }

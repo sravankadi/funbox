@@ -1,5 +1,4 @@
 package com.text.controller;
-
 import java.util.Date;
 import java.util.List;
 
@@ -118,6 +117,8 @@ return new ResponseEntity<BlogPost>(blogPost,HttpStatus.OK);
 		if(email==null){
 			ErrorClazz errorClazz=new ErrorClazz(7,"Unauthorized access..please login");
 		return new ResponseEntity<ErrorClazz>(errorClazz,HttpStatus.UNAUTHORIZED);
+		//if blogpostlikes is null,response.data=?
+		//if blogpostlikes is 1 object,response.data=[blogpostlikes object]
 
 	 }
 
@@ -135,6 +136,7 @@ return new ResponseEntity<BlogPost>(blogPost,HttpStatus.OK);
 		BlogPost blogPost=blogPostLikesDao.updateBlogPostLikes(blogPostId,email);
 		
 		return new ResponseEntity<BlogPost>(blogPost,HttpStatus.OK);
+		//blogpost likes count is updated
 		
 	}
 	@RequestMapping(value="/addcomment/{commentTxt}/{id}",method=RequestMethod.POST)
@@ -162,10 +164,9 @@ return new ResponseEntity<ErrorClazz>(errorClazz,HttpStatus.UNAUTHORIZED);
 		String email=(String)session.getAttribute("email");
 		if(email==null){
 		ErrorClazz errorClazz=new ErrorClazz(7,"Unauthorized access..please login");
-return new ResponseEntity<ErrorClazz>(errorClazz,HttpStatus.UNAUTHORIZED);
+        return new ResponseEntity<ErrorClazz>(errorClazz,HttpStatus.UNAUTHORIZED);
 		}
 		List<BlogComment> blogComments=blogPostDao.getAllBlogComments(blogPostId);
 		return new ResponseEntity<List<BlogComment>>(blogComments,HttpStatus.OK);
 	}
-	
 	}
